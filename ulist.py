@@ -1,4 +1,5 @@
-from .errors import LinkedListUnderflow
+from ulnode import LNode
+from errors import LinkedListUnderflow
 
 
 class UList(object):
@@ -68,8 +69,10 @@ class UList(object):
             if func(p.elem):
                 return p.elem
             p = p.next
+        return None
 
     def print_all(self):
+        print('\n')
         p = self._head
         while p is not None:
             print(p.elem, end='')
