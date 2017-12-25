@@ -61,7 +61,7 @@ class TestUList(TestCase):
         self.ulist.append(1)
         self.ulist.append(3)
         self.ulist.append(5)
-        self.ulist.print_all(
+        self.ulist.print_all()
         data = self.ulist.find(func=func)
         self.assertEqual(data, 5)
         pass
