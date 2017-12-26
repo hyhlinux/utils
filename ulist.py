@@ -66,10 +66,24 @@ class UList(object):
         """
         p = self._head
         while p is not None:
-            if func(p.elem):
+            if func and func(p.elem):
                 return p.elem
             p = p.next
         return None
+
+    def for_each(self, func):
+        p = self._head
+        while p is not None:
+            func(p.elem)
+            p = p.next
+
+    def elements(self, func=None):
+        p = self._head
+        while p is not None:
+            if func and func(p.elem):
+                yield p.elem
+            p = p.next
+
 
     def print_all(self):
         print('\n')
