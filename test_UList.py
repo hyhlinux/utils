@@ -1,11 +1,12 @@
 import unittest
 from unittest import TestCase
-from ulist import UList
+from ulist import UListBase
 
 
-class TestUList(TestCase):
+class TestUListBase(TestCase):
+
     def setUp(self):
-        self.ulist = UList()
+        self.ulist = UListBase()
 
     def test_is_empty(self):
         self.assertTrue(self.ulist.is_empty())
@@ -93,7 +94,6 @@ class TestUList(TestCase):
 
         for e in self.ulist.elements(func=func):
             print("elements-func:{}".format(e))
-
 
     def tearDown(self):
         self.ulist = None
